@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Login</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f2f2f2;
+    }
+
+    .login-container h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .login-container .form-group {
+      margin-bottom: 20px;
+    }
+
+    .login-container .form-group label {
+      font-weight: bold;
+    }
+
+    .login-container .form-control {
+      border-radius: 5px;
+    }
+
+    .login-container .btn-primary {
+      width: 100%;
+    }
+
+    .login-container .error-message {
+      color: red;
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 login-container">
+      <h1>Login Page</h1>
+      <form action="/login" method="post">
+        <div class="form-group">
+          <label for="username">Email:</label>
+          <input type="text" id="username" name="username" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Log In" class="btn btn-primary">
+        </div>
+        <div class="register-link">
+          Don't have an account? <a href="/registration">Register here</a>
+        </div>
+        <div class="error-message" th:if="${param.error}">
+          <p>Invalid username or password.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
